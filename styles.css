@@ -152,43 +152,6 @@ header {
     background-color: #333;
 }
 
-/* Hamburger Icon */
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    position: relative;
-    margin-right: 10px;
-    z-index: 1001;
-}
-
-.menu-icon .bar {
-    height: 4px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.light-mode .menu-icon .bar {
-    background-color: black;
-}
-
-.menu-icon.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
 /* Footer Styling */
 footer {
     text-align: center;
@@ -334,4 +297,83 @@ footer {
 /* Add padding below the blue line (for content spacing) */
 #home p, #community-mods p, #ios-mods p {
   padding-top: 25px; /* Increased space between the blue line and text */
+}
+
+/* Three-dot Menu Icon */
+.three-dots-menu {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.light-mode .three-dots-menu {
+    color: black;
+}
+
+/* Dropdown Menu */
+.dots-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 10px 0;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1002;
+}
+
+.dots-dropdown a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    display: block;
+}
+
+.light-mode .dots-dropdown {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.light-mode .dots-dropdown a {
+    color: black;
+}
+
+/* Show dropdown */
+.dots-dropdown.visible {
+    display: flex;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.light-mode .bottom-nav {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.light-mode .bottom-nav a {
+    color: black;
 }
